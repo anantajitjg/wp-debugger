@@ -57,6 +57,16 @@ function highlight_str( $str ) {
 }
 
 /**
+ * var_dump with <pre> tag wrapped to the output
+ * @param mixed $expression The variable you want to dump.
+*/
+function sdump( $expression ) {
+    echo '<pre>';
+    var_dump( $expression );
+    echo'</pre>';
+}
+
+/**
  * dump the variable and highlight it
  * @param mixed $expression The variable you want to dump.
 */
@@ -65,9 +75,18 @@ function dump( $expression ) {
 }
 
 /**
+ * Prints information about a variable with <pre> tag wrapped to the output.
+ * @param mixed $expression The expression to be printed.
+*/
+function print_sr( $expression ) {
+    echo '<pre>';
+    print_r( $expression );
+    echo '</pre>';
+}
+
+/**
  * Prints information about a variable in the browser console in table format.
  * @param mixed $expression The expression to be printed.
- * @param bool $table whether to display as table layout or not.
 */
 function print_rc( $expression, $table = true ) {
     $json = wp_json_encode( $expression );
